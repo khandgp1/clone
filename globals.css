@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  /* Remove default focus outline — we add our own */
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  :focus-visible {
+    outline: 2px solid #B8975F;
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  /* Utility for the gold underline accent used in headings */
+  .gold-underline::after {
+    content: '';
+    display: block;
+    width: 3rem;
+    height: 3px;
+    background-color: #B8975F;
+    margin-top: 0.75rem;
+  }
+
+  .gold-underline-center::after {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
